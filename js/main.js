@@ -228,6 +228,6 @@ if ('serviceWorker' in navigator) {
    console.log('Registration was succeefull');
  }).catch((error) => {
    // registration failed
-   console.log('Registration failed' + error);
+   console.log('Registration failed');
  });
 }
