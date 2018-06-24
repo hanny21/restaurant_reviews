@@ -1,6 +1,8 @@
 # Restaurant Reviews Project
 This is my project for Udacity's Front-End Web Developer Nanodegree Program.
 
+[view project in browser](https://hanny21.github.io/restaurant_reviews/)
+
 ## Project Overview
 For this project Udacity provided [STARTER CODE](https://github.com/udacity/mws-restaurant-stage-1). The goal is to take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. Finally also add a service worker to begin the process of creating a seamless offline experience for your users.
 
@@ -17,5 +19,5 @@ For this project Udacity provided [STARTER CODE](https://github.com/udacity/mws-
 2. Install Python, if you do not have it already installed.
 3. Launch a local client server using Python from your terminal. \
 Python2: `python -m SimpleHTTPServer 8000` \
-Python3: `python -m http.server 8000` or `python3 -m http.server 8000`
+Python3: `python -m http.server 8000` or `python3 -m http.server 8000` (use python3 in case you have both versions installed)
 4. Open your browser and visit `http://localhost:8000`
