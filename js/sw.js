@@ -21,24 +21,12 @@ self.addEventListener('install', function(event) {
         './img/8.png',
         './img/9.png',
         './img/10.png',
-        '//normalize-css.googlecode.com/svn/trunk/normalize.css" ',
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css'
       ]);
     })
   );
 });
 
-self.addEventListener('install', function (event) {
-   event.waitUntil(
-       caches.open(staticCacheName).then(function (cache) {
-           console.log(cache);
-           return cache.addAll(urlToCache);
-
-       }).catch(error => {
-           console.log(error);
-       })
-   );
-});
 
 self.addEventListener('activate', function(event) {
   event.waitUntil(
