@@ -54,7 +54,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #bbb;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -324,7 +324,6 @@ nav h1 a {
 
 .review-rating {
   background-color: #f58500;
-  border-radius: 10%;
   color: #fff;
   font-weight: bold;
   display: inline;
@@ -334,6 +333,15 @@ nav h1 a {
 
 #restaurant-hours td {
   color: #666;
+}
+
+/* ===== make labels accessible by screen readers only===== */
+
+label {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* ======================Flexbox ====================== */
