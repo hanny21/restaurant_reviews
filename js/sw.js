@@ -1,26 +1,26 @@
 /* eslint-disable */
-var cacheName = 'restaurant-reviews-v1';
+var staticCacheName = 'restaurant-reviews-v1';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/',
-        './js/main.js',
-        './js/dbhelper.js',
-        './js/restaurant_info.js',
-        './data/restaurants.json',
-        './css/styles.css',
-        './img/1.png',
-        './img/2.png',
-        './img/3.png',
-        './img/4.png',
-        './img/5.png',
-        './img/6.png',
-        './img/7.png',
-        './img/8.png',
-        './img/9.png',
-        './img/10.png',
+        'js/main.js',
+        'js/dbhelper.js',
+        'js/restaurant_info.js',
+        'data/restaurants.json',
+        'css/styles.css',
+        'img/1.png',
+        'img/2.png',
+        'img/3.png',
+        'img/4.png',
+        'img/5.png',
+        'img/6.png',
+        'img/7.png',
+        'img/8.png',
+        'img/9.png',
+        'img/10.png',
         '//normalize-css.googlecode.com/svn/trunk/normalize.css" ',
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css'
       ]);
@@ -30,7 +30,7 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('install', function (event) {
    event.waitUntil(
-       caches.open(cacheName).then(function (cache) {
+       caches.open(staticCacheName).then(function (cache) {
            console.log(cache);
            return cache.addAll(urlToCache);
 
