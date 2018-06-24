@@ -82,6 +82,7 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 #breadcrumb {
@@ -355,10 +356,10 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 #map-container, #restaurant-container, #reviews-container {
@@ -369,10 +370,6 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 #map {
@@ -388,4 +385,37 @@ main {
 
 .review-name, .review-date {
   width: 50%;
+}
+
+@media (min-width: 700px) {
+  #map-container {
+    width: 50%;
+    order: 2;
+  }
+  .inside #map {
+    min-height: 600px;
+    height: 100%;
+    width: 100%;
+  }
+  #restaurant-container {
+    width: 50%;
+    order: 1;
+  }
+  #reviews-container {
+    order: 3;
+  }
+  #reviews-container ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #reviews-container ul li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  #reviews-container ul li {
+    width: 33.33%;
+  }
 }
