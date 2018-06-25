@@ -31,6 +31,26 @@ self.addEventListener('install', (e) => {
   );
 });
 
-self.addEventListener('activate', (e) => console.log('***SW activated'))
+self.addEventListener('activate', (e) =>{
+  e.waitUntil(
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(cacheNames.map((thisCacheName) => {
+          if (thisCacheName !== cacheName) {
+            return caches.delete(thisCacheName);
+          }
+        }));
+      })
+  );
+});
 
-self.addEventListener('fetch', (e) => console.log('***SW fetching', e.request.url))
+self.addEventListener('fetch', (e) => {
+  e.waitUntil(
+    e.respondWith(
+      caches.match(e.request)
+        .then((response) => {
+          return response || fetch(event.request);
+        })
+    )
+  );
+});
