@@ -1,7 +1,7 @@
 var cacheName = 'restaurant-reviews-v1';
 
 let cacheFiles = [
-  './',
+  '/',
   './index.html',
   './restaurant.html',
   './styles.css',
@@ -26,6 +26,7 @@ self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(cacheName)
       .then((cache) => {
+        console.log('...installing...');
         return cache.addAll(cacheFiles);
       })
   );
@@ -37,6 +38,7 @@ self.addEventListener('activate', (e) =>{
       .then((cacheNames) => {
         return Promise.all(cacheNames.map((thisCacheName) => {
           if (thisCacheName !== cacheName) {
+            console.log('...activating...');
             return caches.delete(thisCacheName);
           }
         }));
@@ -49,6 +51,7 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
       caches.match(e.request)
         .then((response) => {
+          console.log('...fetching...');
           return response || fetch(event.request);
         })
     )
