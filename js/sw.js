@@ -27,7 +27,7 @@ self.addEventListener('install', (e) => {
   console.log('***SW installed')
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
-      console.console.log('SW is caching files');
+      console.log('SW is caching files');
       return cache.addAll(cacheFiles);
     })
   )
