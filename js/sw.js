@@ -1,4 +1,4 @@
-let cacheName = 'restaurant-reviews-v1';
+var cacheName = 'restaurant-reviews-v1';
 
 let cacheFiles = [
   './',
