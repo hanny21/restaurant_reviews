@@ -450,9 +450,10 @@ main {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1600px) {
   body {
-    width: 1200px;
+    width: 1600px;
     margin: auto;
+    background-color: #f3f3f3;
   }
 }
