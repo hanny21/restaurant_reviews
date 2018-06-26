@@ -374,6 +374,7 @@ main {
 
 #map-container, #main-map-container, #restaurant-container, #reviews-container, #section-filter {
   width: 100%;
+  justify-content: space-around;
 }
 
 #map-container, #main-map-container {
@@ -409,7 +410,7 @@ main {
 
 @media (min-width: 600px) {
   #restaurants-list li {
-    width: 50%;
+    width: 45%;
   }
 }
 
@@ -445,6 +446,13 @@ main {
     width: 33.33%;
   }
   #restaurants-list li {
-    width: 33.33%;
+    width: 30%;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    width: 1200px;
+    margin: auto;
   }
 }
