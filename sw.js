@@ -44,11 +44,24 @@ self.addEventListener('activate', (e) =>{
   );
 });
 
-
 self.addEventListener('fetch', (e) => {
-  e.respondWith(e.request)
-    .then((response) => {
-      if(response) {return response;
-      } return fetch(e.request);
-    });
+  event.respondWith(
+    caches.match(e.request)
+      .then((response) => {
+        if (response) { return response; }
+        let fetchRequest = e.request.clone();
+        return fetch(fetchRequest)
+          .then((response) => {
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+            var responseToCache = response.clone();
+            caches.open(cacheName)
+              .then((cache) => {
+                cache.put(event.request, responseToCache);
+              });
+            return response;
+          });
+      })
+  );
 });
